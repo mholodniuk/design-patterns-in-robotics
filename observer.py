@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
 
+
 class BatterySensor:
     def __init__(self, state: int) -> None:
         self.state = state
-        self.observers = []
+        self.observers: list[Observer] = []
 
     def attach(self, observer) -> None:
         print("Subject: Attached an observer.")
@@ -22,16 +23,19 @@ class BatterySensor:
         self.state = new_state
         self.notify()
 
+
 class Observer(ABC):
     @abstractmethod
     def update(self, subject: BatterySensor) -> None:
-        pass 
+        pass
+
 
 class NotificationService(Observer):
-    def update(self, subject: BatterySensor) -> None: 
+    def update(self, subject: BatterySensor) -> None:
         if (subject.state < 30):
             print(f'\tReacting to the subject event. Battery is low')
             print(f'\tSending notification to the user')
+
 
 class EnergyManagementSystem(Observer):
     def update(self, subject: BatterySensor) -> None:

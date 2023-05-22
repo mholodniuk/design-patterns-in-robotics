@@ -2,9 +2,11 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 import time
 
+
 @dataclass
 class RaceTrack:
     points: list[tuple]
+
 
 class LineFollowingStrategy(ABC):
     @abstractmethod
