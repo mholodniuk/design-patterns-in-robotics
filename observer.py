@@ -54,9 +54,9 @@ if __name__ == "__main__":
     battery_subject = BatterySensor(100)
 
     notification_service = NotificationService()
-    battery_subject.attach(notification_service)
-
     energy_management_system = EnergyManagementSystem()
+
+    battery_subject.attach(notification_service)
     battery_subject.attach(energy_management_system)
 
     battery_subject.change_state(90)

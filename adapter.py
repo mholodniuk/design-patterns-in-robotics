@@ -53,5 +53,5 @@ if __name__ == "__main__":
     microToUsbAdapter = MicroToUsbAdapter(microUsbCable)
 
     usbPort1.plug(usbCable)
-    usbPort2.plug(microUsbCable)
+    # usbPort2.plug(microUsbCable)
     usbPort3.plug(microToUsbAdapter)
