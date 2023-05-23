@@ -65,7 +65,6 @@ class RobotStandbyState(State):
 if __name__ == "__main__":
     robot = Robot(RobotStandbyState())
 
-    print('\n')
     robot.start_running()
-    print('\n')
+
     robot.stop_running()
